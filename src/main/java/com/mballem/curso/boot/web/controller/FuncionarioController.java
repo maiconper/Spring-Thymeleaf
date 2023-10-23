@@ -39,7 +39,7 @@ public class FuncionarioController {
 		System.out.println("data:" + funcionario.getDataEntrada());
 		funcionarioService.salvar(funcionario);
 		attr.addFlashAttribute("success","Funcionario inserido com sucesso");
-		return "redirect:/funcionario/cadastrar";
+		return "redirect:/funcionarios/cadastrar";
 	}
 
 	@GetMapping("/editar/{id}")
@@ -51,7 +51,7 @@ public class FuncionarioController {
 	@PostMapping("/editar")
 	public String editar(Funcionario funcionario, RedirectAttributes attr){
 		funcionarioService.editar(funcionario);
-		attr.addFlashAttribute("funcionario","Funcionario editado com sucesso");
+		attr.addFlashAttribute("success","Funcionario editado com sucesso");
 		return "redirect:/funcionarios/cadastrar";
 
 	}

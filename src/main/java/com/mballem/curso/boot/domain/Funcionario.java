@@ -25,14 +25,12 @@ public class Funcionario extends AbstractEntity<Long> {
 	//@NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#,##0.00")
 
 	@Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
+	@NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#,##0.00")
 	private BigDecimal salario;
 
-	//@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-
-
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataEntrada;
-	//@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataSaida;
 	
 	@OneToOne(cascade = CascadeType.ALL)
